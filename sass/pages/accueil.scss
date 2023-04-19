@@ -1,0 +1,334 @@
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto","Shrikhand", sans-serif;
+    font-style: normal;
+    max-width: 1024px;
+    background-color: var(--Grey-3);
+    cursor: default;
+
+    // Header
+    .header {
+        @include flex_column();
+        @include flex_center();
+
+        .back_svg {
+            width: 100%;
+            background-color: var(--White);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+            margin: 0;
+            z-index: 1;
+
+            img {
+                width: 162px;
+                padding: 20px 0 10px 0;
+            }
+        }
+        
+        .restaurant_address {
+            width: 100%;
+            background-color: var(--Grey-2);
+            padding: 16px 0;
+
+            input {
+                width: 110px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                margin-left: 16px;
+            }
+        }
+    }
+
+    // Main
+    .main {
+        // Section restaurant
+        .restaurant {
+            @include flex_column();
+            @include flex_center();
+            padding: 30px 0 15px 0;
+
+            h1 {
+                width: 275px;
+                font-weight: 700;
+                font-size: 24px;
+            }
+            p {
+                width: 315px;
+                font-weight: 300;
+                font-size: 18px;
+                margin-top: 16px;
+            }
+            .btn {
+                @include button();
+                margin: 25px 0 30px 0;
+
+                p {
+                    width: 225px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 19px;
+                    color: var(--White);
+                    transform: matrix(1, 0, 0, -1, 0, 0);
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        // Section Steps
+        .steps {
+            @include flex_column();
+            background-color: var(--White);
+            padding: 50px 15px;
+            h2 {
+                font-weight: 700;
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            .steps_list {
+                @include flex_column();
+                gap: 20px;
+                list-style-type: none;
+                counter-reset: my-counter; /*Numéro 1,2,3*/
+
+
+                .step {
+                    @include flex_row();
+                    gap: 20px;
+                    height: 72.38px;
+
+                    background-color: var(--Grey-3);
+                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                    border-radius: 20px;
+                    
+                    position: relative;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 16px;
+                    padding-left: 35px;
+
+                    & i {
+                        color: var(--Grey-4);
+                    }
+                    & h3 {
+                        color: var(--Black-1);
+                    }
+                    &:before {
+                        @include flex_row();
+                        justify-content: center;
+                        align-items: center;
+
+                        width: 24px;
+                        height: 24px;
+
+                        background-color: var(--Primary);
+                        border-radius: 50%;
+                        color: var(--White);
+
+                        content: counter(my-counter); /*Afficher numéro*/
+                        counter-increment: my-counter; /*Prend numéro 1,2,3*/
+
+                        position: absolute;
+                        left: -10px;
+                    }
+                }
+                .step:hover {
+                    & i {
+                        color: var(--Primary);
+                    }
+                }
+            }
+        }
+
+        // Section Cards
+        .cards {
+            padding: 50px 15px;
+            h2 {
+                font-weight: 700;
+                font-size: 24px;
+                margin: 0 0 30px 0;
+            }
+            // Card list
+            .cards_list {
+                @include flex_column();
+                gap: 20px;
+                // Card
+                article {
+                    background-color: var(--White);
+                    border-radius: 15px;
+                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                    position: relative;
+
+                    a {
+                        text-decoration:none;
+
+                        img {
+                            width: 100%;
+                            height: 175.69px;
+                            border-radius: 15px 15px 0px 0px;
+                            object-fit: cover;
+                        }
+                        h3 {
+                            width: 100%;
+                            color: var(--Black-1);
+                            padding-left: 13px;
+                            padding: 10px 0 5px 13px;
+                        }
+                        p {
+                            width: 100%;
+                            color: var(--Black-1);
+                            padding-left: 13px;
+                            padding: 0 0 10px 13px;
+                        }
+                    }
+                    i {
+                        width: 32px;
+                        height: 31px;
+                        font-size: 25px;
+                        position: absolute;
+                        right: 25px;
+                        bottom: 25px;
+                    }
+                    .card_new {
+                        @include flex_row();
+                        justify-content: center;
+                        align-items: center;
+
+                        position: absolute;
+                        right: 11px;
+                        top: 11px;
+
+                        width: 80px;
+                        height: 29px;
+
+                        background: var(--Green);
+                        color: var(--Green-font);
+                        border-radius: 2px;
+                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+                        
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    // Footer
+    .footer {
+        @include flex_column();
+        background-color: var(--Grey-1);
+        padding: 25px 20px;
+        
+        h2 {
+            width: 100%;
+            font-family: 'Shrikhand';
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--White);
+        }
+        .footer_link {
+            @include flex_column();
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: var(--White);
+            margin-bottom: 5px;
+        }
+        .footer_link1{
+            @include flex_column();
+        }
+        .footer_link2{
+            @include flex_column();
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        max-width: 100%;
+
+        // Main
+        .main {
+            // Section restaurant
+            .restaurant {
+                padding: 30px 0 0 0;
+                h1 {
+                    width: 70%;
+                    font-size: 40px;
+                }
+                p {
+                    width: 100%;
+                }
+            }
+
+            // Section Steps
+            .steps {
+                justify-content: center;
+                padding: 50px 170px;
+                .steps_list {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    .step {
+                    padding-right: 50px;
+                    }
+                }
+            }
+
+            // Section Cards
+            .cards {
+                padding: 50px 170px;
+
+                // Card list
+                .cards_list {
+                    @include flex_row();
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    gap: 50px;
+
+                    // Card
+                    article {
+                        min-width: 46%;
+                        max-width: 490px;
+                    }
+                }
+            }
+        }
+
+        // Footer
+        .footer {
+            flex-direction: row-reverse;
+            padding: 55px 20px 25px 20px;
+            h2 {
+                width:137.58px;
+                margin-left: 80px;
+            }
+            .footer_link {
+                @include flex_row();
+                margin-top: 10px;
+            }
+            a {
+                text-decoration: none;
+                color: var(--White);
+                margin-bottom: 5px;
+                margin-left: 15px;
+            }
+            .footer_link1{
+                @include flex_row();
+            }
+            .footer_link2{
+                @include flex_row();
+                margin-left: 20px;
+            }
+        }
+    }
+}
