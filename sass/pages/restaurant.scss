@@ -1,0 +1,283 @@
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Roboto","Shrikhand", sans-serif;
+    font-style: normal;
+    max-width: 1024px;
+    margin: auto;
+    background-color: var(--Grey-3);
+    cursor: default;
+
+    // Header
+    .header {
+        @include flex_row();
+        @include flex_center();
+        width: 100%;
+        // height: 63px;
+        background-color: var(--White);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        z-index: 1;
+        i {
+            padding-left: 25px;
+            color: var(--Black-1);
+        }
+        .back_svg {
+            width: 100%;
+            margin: 0;
+
+            img {
+                width: 162px;
+                padding: 15px 35px 10px 0;
+            }
+        }
+    }
+
+    // Main
+    // Section Main content
+    main {
+        img {
+            width: 100%;
+            height: 275px;
+            object-fit: cover;
+        }
+        // Menu
+        .full_menu {
+            background-color: var(--Grey-3);
+            margin: auto;
+
+            .menu {
+                position: relative;
+                top: -50px;
+                background-color: var(--Grey-3);
+                border-radius: 25px 25px 0px 0px;
+                padding: 25px 15px 10px 15px;
+                margin-bottom: -55px;
+
+                .menu_title {
+                    @include flex_row();
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        
+                h1 {
+                    width: 80%;
+                    font-family: 'Shrikhand';
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: 28px;
+                }
+                
+                .heart {
+                    padding-right: 25px;
+                    font-size: 25px;
+                }
+                
+                .menu_item {
+                    margin-top: 25px;
+                    @include flex_column();
+                    gap: 10px;
+                    h2 {
+                        width: 40px;
+                        border-bottom: 3px solid var(--Green);
+                        font-weight: 300;
+                        font-size: 16px;
+                        padding-bottom: 5px;
+                    }
+                        
+                    .item_full {
+                        list-style-type: none;
+                        @include flex_column();
+                        text-align: left;
+                        width: 100%;
+                                
+                        background-color: var(--White);
+                        border-radius: 15px;
+                        box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+                        border: none;
+                        cursor: pointer;
+                        padding-left: 5px;
+                        overflow: hidden;
+                            
+                        .item {
+                            width: 100%;
+                            @include flex_row();
+                            justify-content: space-between;
+
+                            .item_text {
+                                width: 90%;
+                                @include flex_column();
+                                justify-content: center;
+                                padding-left: 10px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                        
+                                h3 {
+                                    max-height: 21px;
+                                    margin-bottom: 5px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                                p {
+                                    max-height: 19px;
+                                    font-size: 15px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                            }
+                            b {
+                                width: 10%;
+                                right: 0px;
+                                bottom: 0px;
+                                display: flex;
+                                justify-content: right;
+                                align-items: center;
+                                padding-top: 25px;
+                                padding-right: 10px;
+                            }
+                            .item_check {
+                                width: 0%;
+                                height: 69px;
+                                background-color: var(--Green);
+                                @include flex_row();
+                                justify-content: center;
+                                align-items: center;
+
+                                & .check {
+                                    color: transparent;
+                                    background-color: var(--White);
+                                    border-radius: 50%;
+                                    width: 0%;
+                                    height: 19px;
+                                    @include flex_row();
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bouton {
+                @include flex_column();
+                @include flex_center();
+
+                padding: 25px 0 30px 0;
+        
+                .btn {
+                    @include button();
+                    p {
+                        width: 225px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: var(--White);
+                        transform: matrix(1, 0, 0, -1, 0, 0);
+                        padding-bottom: 15px;
+                    }
+                }
+            } 
+        }
+    }
+
+    // Footer
+    .footer {
+        @include flex_column();
+        background-color: var(--Grey-1);
+        padding: 25px 20px;
+        h2 {
+            width: 100%;
+            font-family: 'Shrikhand';
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--White);
+        }
+        .footer_link {
+            @include flex_column();
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: var(--White);
+            margin-bottom: 5px;
+            
+        }
+        .footer_link1{
+            @include flex_column();
+        }
+        .footer_link2{
+            @include flex_column();
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        max-width: 100%;
+        background-color: var(--White);
+
+        // Header
+        .header {
+            width: 100%;
+        }
+
+        // Main
+        // Section Main content
+        main {
+            img {
+                width: 100%;
+                height: 470px;
+            }
+            // Menu
+            .full_menu {
+                width: 1055px;
+                .menu {
+                    padding: 25px 200px 10px 200px;
+                    box-sizing: border-box;
+            
+                    .menu_title {
+                        padding: 0 145px;
+                    }
+                    .heart {
+                        top: 3.5%;
+                        right: 370px;
+                    }
+                }
+            }
+        }
+        
+        // Footer
+        .footer {
+            flex-direction: row-reverse;
+            padding: 55px 20px 25px 20px;
+            h2 {
+                width:137.58px;
+                margin-left: 80px;
+            }
+            .footer_link {
+                @include flex_row();
+                margin-top: 10px;
+            }
+            a {
+                text-decoration: none;
+                color: var(--White);
+                margin-left: 15px;
+                margin-bottom: 5px;
+            }
+            .footer_link1{
+                @include flex_row();
+            }
+            .footer_link2{
+                @include flex_row();
+                margin-left: 20px;
+            }
+        }
+    }
+}
