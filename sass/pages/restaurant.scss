@@ -78,6 +78,17 @@ body {
                     font-size: 25px;
                 }
                 
+                & .heart:hover{
+                    cursor: pointer;
+                    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+                    -webkit-background-clip: text; // Prend la forme de l'élément
+                    background-clip: text; // Prend la forme de l'élément
+                    color: transparent;
+                    border: none;
+                    font-weight: bold;
+                    transition: all 0.5s; // Durée pour apparition
+                }
+                
                 .menu_item {
                     margin-top: 25px;
                     @include flex_column();
@@ -148,6 +159,7 @@ body {
                                 @include flex_row();
                                 justify-content: center;
                                 align-items: center;
+                                transition: all 0.3s; // Durée pour apparition
 
                                 & .check {
                                     color: transparent;
@@ -158,11 +170,42 @@ body {
                                     @include flex_row();
                                     justify-content: center;
                                     align-items: center;
+                                    transition: all 0.3s; // Durée pour apparition
                                 }
                             }
                         }
+
+                        .item:hover .item_check {
+                            width: 20%;
+
+                            .check {
+                                width: 20px;
+                                color: var(--Green);
+                                background-color: var(--White);
+                            }
+                        }
                     }
-                }
+                    @keyframes progressive {
+                        0% {
+                            transform: translateY(30%); // Déplacement verticale
+                            opacity: 0;
+                        }
+                        100% {
+                            transform: translateY(0); // Position d'origine
+                            opacity: 1;
+                        }
+                    }
+                    
+                    .animation_1 {
+                        animation: progressive 600ms ease-in-out; // Délai apparition
+                    }
+                    .animation_2 {
+                        animation: progressive 1200ms ease-in-out; // Délai apparition
+                    }
+                    .animation_3 {
+                        animation: progressive 1500ms ease-in-out; // Délai apparition
+                    }
+                } 
             }
 
             .bouton {
@@ -181,6 +224,10 @@ body {
                         transform: matrix(1, 0, 0, -1, 0, 0);
                         padding-bottom: 15px;
                     }
+                }
+                .btn:hover {
+                    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+                    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.35);
                 }
             } 
         }

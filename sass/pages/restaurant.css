@@ -83,6 +83,16 @@ body main .full_menu .menu .heart {
   padding-right: 25px;
   font-size: 25px;
 }
+body main .full_menu .menu .heart:hover {
+  cursor: pointer;
+  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: none;
+  font-weight: bold;
+  transition: all 0.5s;
+}
 body main .full_menu .menu .menu_item {
   margin-top: 25px;
   display: flex;
@@ -156,6 +166,7 @@ body main .full_menu .menu .menu_item .item_full .item .item_check {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s;
 }
 body main .full_menu .menu .menu_item .item_full .item .item_check .check {
   color: transparent;
@@ -167,6 +178,34 @@ body main .full_menu .menu .menu_item .item_full .item .item_check .check {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s;
+}
+body main .full_menu .menu .menu_item .item_full .item:hover .item_check {
+  width: 20%;
+}
+body main .full_menu .menu .menu_item .item_full .item:hover .item_check .check {
+  width: 20px;
+  color: var(--Green);
+  background-color: var(--White);
+}
+@keyframes progressive {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body main .full_menu .menu .menu_item .animation_1 {
+  animation: progressive 600ms ease-in-out;
+}
+body main .full_menu .menu .menu_item .animation_2 {
+  animation: progressive 1200ms ease-in-out;
+}
+body main .full_menu .menu .menu_item .animation_3 {
+  animation: progressive 1500ms ease-in-out;
 }
 body main .full_menu .bouton {
   display: flex;
@@ -192,6 +231,10 @@ body main .full_menu .bouton .btn p {
   color: var(--White);
   transform: matrix(1, 0, 0, -1, 0, 0);
   padding-bottom: 15px;
+}
+body main .full_menu .bouton .btn:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.35);
 }
 body .footer {
   display: flex;
