@@ -11,6 +11,26 @@
   --Green-font: #008766;
 }
 
+.item_full:nth-child(1) {
+  animation: progressive 0ms ease-in-out;
+}
+
+.item_full:nth-child(2) {
+  animation: progressive 600ms ease-in-out;
+}
+
+.item_full:nth-child(3) {
+  animation: progressive 1200ms ease-in-out;
+}
+
+.item_full:nth-child(4) {
+  animation: progressive 1800ms ease-in-out;
+}
+
+.item_full:nth-child(5) {
+  animation: progressive 2000ms ease-in-out;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -197,15 +217,6 @@ body main .full_menu .menu .menu_item .item_full .item:hover .item_check .check 
     transform: translateY(0);
     opacity: 1;
   }
-}
-body main .full_menu .menu .menu_item .animation_1 {
-  animation: progressive 600ms ease-in-out;
-}
-body main .full_menu .menu .menu_item .animation_2 {
-  animation: progressive 1200ms ease-in-out;
-}
-body main .full_menu .menu .menu_item .animation_3 {
-  animation: progressive 1500ms ease-in-out;
 }
 body main .full_menu .bouton {
   display: flex;

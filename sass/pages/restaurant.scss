@@ -1,6 +1,21 @@
 @import "../utils/mixins.scss";
 @import "../utils/variables.scss";
 
+.item_full:nth-child(1) {
+    animation: progressive 0ms ease-in-out; // Délai apparition
+}
+.item_full:nth-child(2) {
+    animation: progressive 600ms ease-in-out; // Délai apparition
+}
+.item_full:nth-child(3) {
+    animation: progressive 1200ms ease-in-out; // Délai apparition
+}
+.item_full:nth-child(4) {
+    animation: progressive 1800ms ease-in-out; // Délai apparition
+}
+.item_full:nth-child(5) {
+    animation: progressive 2000ms ease-in-out; // Délai apparition
+}
 * {
     margin: 0;
     padding: 0;
@@ -196,15 +211,6 @@ body {
                         }
                     }
                     
-                    .animation_1 {
-                        animation: progressive 600ms ease-in-out; // Délai apparition
-                    }
-                    .animation_2 {
-                        animation: progressive 1200ms ease-in-out; // Délai apparition
-                    }
-                    .animation_3 {
-                        animation: progressive 1500ms ease-in-out; // Délai apparition
-                    }
                 } 
             }
 
