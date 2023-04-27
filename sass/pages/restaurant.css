@@ -138,7 +138,7 @@ body main .full_menu .menu .menu_item .item_full .item .item_text {
 }
 body main .full_menu .menu .menu_item .item_full .item .item_text h3 {
   max-height: 21px;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -228,7 +228,7 @@ body main .full_menu .bouton .btn {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 body main .full_menu .bouton .btn p {
-  width: 225px;
+  width: auto;
   font-size: 16px;
   font-weight: 500;
   color: var(--White);
